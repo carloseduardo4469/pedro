@@ -1,4 +1,4 @@
-fetch('components/header.html')
+fetch('../components/header.html')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP ${response.status} ao carregar components/header.html`);
