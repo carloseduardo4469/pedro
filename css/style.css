@@ -1,37 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+    
 :root{
-    --primary-color: #00ff1a;
-    --secondary-color: #fd06b3;
-    --font-family: 'Arial', sans-serif;
-    --font-size: 16px;
+    --verde:#39ff14;
+    --rosa:#ff00ae;
+    --amarelo:#fff200;
+    --roxo:#7c0d99
 }
 
 *{
-    margin: 0;
-    padding: 0;
+    box-sizing:border-box
 }
+
+html{
+    cursor:crosshair
+}
+
 body{
-    display: flex;
-    flex-direction: column;
+    margin:0;
+    min-height:100vh;
+    color:#130017;
+    font-family:"Comic Sans MS","Comic Neue",cursive;
+    background-color:#00d9ff;
+    background-image:linear-gradient(45deg,#ff00ae88 25%,transparent 25%),linear-gradient(-45deg,#39ff14aa 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#fff20099 75%);
+    background-size:46px 46px
 }
-header{
-    height: 200px;
-    background-image: url(../assets/escova.png);
-    background-size: contain;
-    background-position: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+a,button,input{
+    font:inherit
+}
+
+a,button{
+    cursor:help
+}
+
+
+.ticker{
+    overflow:hidden;
+    padding:7px 0;
+    color:var(--amarelo);
+    background:#000;
+    border-bottom:5px dashed red;
+    white-space:nowrap
+}
+
+.ticker span{
+    display:inline-block;
+    min-width:100%;
+    padding-left:100%;
+    animation:correr 13s linear infinite
+}
+
+@keyframes correr{
+    to{
+    transform:translateX(-100%)
+}
+
 
 }
 
-h1{
-    font-family: var(--font-family);
-    font-size: 3rem;
-    color: var(--primary-color);
+
+.cabecalho{
+    min-height:210px;
+    padding:20px 4vw;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:var(--roxo) url(../assets/escova.png) center/min(60vw,700px) auto no-repeat;
+    border:12px ridge var(--amarelo);
+    text-shadow:5px 5px #000
 }
-a, p{
-    text-decoration: none;
-    color: var(--secondary-color);
-    font-family: var(--font-family);
-    font-size: 2rem;
+
+.cabecalho.compacto{
+    min-height:145px
+}
+
+.cabecalho h1{
+    margin:0;
+    font-size:clamp(2rem,6vw,5.5rem);
+    transform:rotate(-5deg)
+}
+
+.cabecalho .vitoria{
+    color:var(--verde);
+    transform:rotate(6deg)
+}
+
+.cabecalho .derrota{
+    color:#ff3030
+}
+
+.pedrao{
+    padding:6px 12px;
+    color:var(--amarelo);
+    font-size:clamp(2.2rem,8vw,7rem);
+    font-weight:900;
+    letter-spacing:-8px;
+    text-decoration:underline wavy var(--rosa);
+    transform:rotate(2deg)
+}
+
+
+.painel{
+    width:min(1050px,calc(100% - 24px));
+    margin:28px auto
+}
+
+.caixa-torta{
+    padding:clamp(20px,5vw,50px);
+    background:var(--amarelo);
+    border:14px outset var(--rosa);
+    box-shadow:18px 18px #000;
+    transform:rotate(-.7deg);
+    text-align:center
+}
+
+.hero h2,.formulario-imc h2,.arquivo h2{
+    margin:15px 0;
+    font-family:Impact,fantasy;
+    font-size:clamp(2.4rem,7vw,5.5rem);
+    line-height:.88
+}
+
+.hero h2 span{
+    color:red
+}
+
+.hero h2 em{
+    color:var(--verde);
+    -webkit-text-stroke:2px #000
+}
+
+.hero>p{
+    font-size:1.2rem
+}
+
+.carimbo,.etapa{
+    display:inline-block;
+    margin:0;
+    padding:8px;
+    color:#fff;
+    background:red;
+    border:4px solid #000;
+    transform:rotate(-3deg)
+}
+
+
+.placar{
+    margin:25px 0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px
+}
+
+.placar span{
+    padding:9px;
+    color:#fff;
+    background:#000;
+    border:3px solid lime
+}
+
+.botao-principal,.botao-recurso{
+    display:inline-block;
+    margin:15px;
+    padding:17px 24px;
+    color:#fff;
+    background:linear-gradient(#ff00ae,#7600ff);
+    border:8px outset var(--verde);
+    box-shadow:8px 8px red;
+    font-size:clamp(1rem,3vw,1.6rem);
+    font-weight:900;
+    text-decoration:none;
+    animation:respirar .8s infinite alternate
+}
+
+@keyframes respirar{
+    to{
+    transform:scale(1.06) rotate(1deg)
+}
+
+
+}
+
+.botao-nao{
+    padding:12px;
+    color:#fff;
+    background:#666;
+    border:5px inset #ddd
+}
+
+.aviso-secreto{
+    padding:12px;
+    color:#fff;
+    background:red;
+    font-size:1.3rem
+}
+
+
+.pedrai{
+    margin:40px 0 20px;
+    padding:15px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    background:#c0c0c0;
+    border:7px outset #eee
+}
+
+.pedrai p{
+    margin:4px 0
+}
+
+.avatar{
+    padding:11px 18px;
+    color:lime;
+    background:#000;
+    border-radius:50%;
+    font:2rem Impact
+}
+
+.menu-ruim{
+    padding:20px;
+    background:lime;
+    border:9px dotted blue
+}
+
+.menu-ruim h2{
+    color:red
+}
+
+.menu-ruim a{
+    display:block;
+    margin:12px;
+    color:#0000ee;
+    font-size:1.25rem;
+    text-decoration:underline
+}
+
+footer{
+    padding:20px;
+    color:#fff;
+    background:#000;
+    text-align:center
+}
+
+
+.formulario-imc{
+    max-width:760px;
+    margin:auto
+}
+
+.formulario-imc small{
+    font:.4em "Comic Sans MS";
+    color:red
+}
+
+.campo{
+    margin:22px auto;
+    text-align:left;
+    max-width:500px
+}
+
+.campo label,.arquivo label{
+    display:block;
+    margin-bottom:6px;
+    font-size:1.2rem;
+    font-weight:bold
+}
+
+.campo input,.linha-senha input{
+    width:100%;
+    padding:15px;
+    background:#ffb3e6;
+    border:7px inset blue;
+    font-size:1.4rem
+}
+
+.resultado{
+    margin:25px 0;
+    padding:18px;
+    color:#fff;
+    background:red;
+    border:8px double #000;
+    font-size:1.4rem
+}
+
+.resultado strong{
+    display:block;
+    font:3rem Impact
+}
+
+.voltar{
+    display:inline-block;
+    margin-top:35px;
+    padding:10px;
+    color:blue;
+    background:#fff
+}
+
+
+.arquivo{
+    margin-bottom:45px;
+    padding:30px;
+    background:#ddd;
+    border:10px ridge #888
+}
+
+.grade-captcha{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    max-width:720px;
+    margin:25px auto
+}
+
+.grade-captcha button{
+    min-height:165px;
+    padding:10px;
+    overflow:hidden;
+    background:#fff;
+    border:7px outset #999
+}
+
+.grade-captcha button.selecionado{
+    border:9px solid blue;
+    background:#70d9ff
+}
+
+.grade-captcha span{
+    display:block;
+    font-size:4rem
+}
+
+.grade-captcha img{
+    display:block;
+    width:100%;
+    height:100px;
+    object-fit:contain
+}
+
+.mensagem-erro{
+    min-height:1.5em;
+    color:red;
+    font-weight:bold
+}
+
+.cofre{
+    color:#20ff20;
+    background:#050505;
+    border-color:#777
+}
+
+.pastas{
+    margin:20px 0;
+    padding:20px;
+    color:lime;
+    background:#181818;
+    font-family:Consolas,monospace
+}
+
+.linha-senha{
+    display:flex;
+    gap:6px
+}
+
+.linha-senha button{
+    padding:10px 20px;
+    color:#000;
+    background:lime;
+    border:5px outset green
+}
+
+
+.premio{
+    text-align:center
+}
+
+.certificado{
+    padding:45px 25px;
+    background:#fff4c4;
+    border:18px double #7a4b00;
+    box-shadow:15px 15px #000
+}
+
+.certificado h2{
+    font:clamp(2rem,6vw,4.5rem) Impact;
+    color:#6e0000
+}
+
+.certificado strong{
+    display:block;
+    color:var(--verde);
+    -webkit-text-stroke:2px #000;
+    font:clamp(4rem,12vw,9rem) Impact;
+    transform:rotate(-4deg)
+}
+
+.certificado small{
+    display:block
+}
+
+.titulo-edits{
+    margin-top:55px;
+    padding:10px;
+    color:#ff0;
+    background:red
+}
+
+.videos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin:20px 0
+}
+
+.videos video{
+    width:100%;
+    border:9px ridge magenta;
+    background:#000
+}
+
+
+@media(max-width:650px){
+    .cabecalho{
+    min-height:140px;
+    padding:10px;
+    border-width:6px
+}
+
+.cabecalho h1{
+    font-size:1.5rem;
+    writing-mode:vertical-rl
+}
+
+.pedrao{
+    font-size:2.5rem;
+    letter-spacing:-4px
+}
+
+.grade-captcha{
+    grid-template-columns:1fr 1fr
+}
+
+.videos{
+    grid-template-columns:1fr
+}
+
+.linha-senha{
+    flex-direction:column
+}
+
+.caixa-torta{
+    box-shadow:9px 9px #000
+}
+
+
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*:before,*:after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important
+}
+
+
 }

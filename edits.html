@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edits</title>
+    <title>Arquivo Confidencial — Pedrão</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <h1>Derrota</h1>
-        <h1>Pedrao</h1>
-        <h1>Derrota</h1>
-
-    </header>
-    <main>
-        <a href="index.html">Voltar</a>
-        <br>
-        <video width="640" height="360" controls>
-            <source src="assets/edit1.mp4" type="video/mp4">
-            Seu navegador não suporta a reprodução de vídeos.
-        </video>
-        <br>
-        <video width="640" height="360" controls>
-            <source src="assets/edit2.mp4" type="video/mp4">
-            Seu navegador não suporta a reprodução de vídeos.
-        </video>
+<body data-page="arquivo">
+    <div class="ticker"><span>FASES 2 E 3 ⚠ CONTEÚDO EMOCIONALMENTE CLASSIFICADO ⚠ NÃO MOSTRAR AO PEDRÃO ⚠</span></div>
+    <header class="cabecalho compacto"><h1 class="derrota">DERROTA</h1><a class="pedrao" href="index.html">PEDRÃO</a><h1 class="vitoria">VITÓRIA</h1></header>
+    <main class="painel">
+        <section id="captcha" class="arquivo caixa-torta">
+            <p class="etapa">FASE 2/3 — CAPTCHA EMOCIONAL</p><h2>MARQUE TODAS AS DECISÕES RUINS</h2>
+            <p>Selecione os quatro itens suspeitos. Se você for um robô, provavelmente fará escolhas melhores.</p>
+            <div class="grade-captcha">
+                <button type="button" data-ruim="true"><span>✝️</span>Mauá</button>
+                <button type="button" data-ruim="true"><img src="assets/71444-monster-energy-drink.png" alt="Escova roxa">Pericardite</button>
+                <button type="button" data-ruim="false"><span>🏆</span>Vitória</button>
+                <button type="button" data-ruim="true"><img src="assets/escova.png" alt="Escova roxa">Escovita</button>
+                <button type="button" data-ruim="true"><img src="assets/unnamed.jpg" alt="Arhur">Arthur</button>
+                <button type="button" data-ruim="false"><img src="assets/oscarguindaste.jpg" alt="Guindaste Oscar">Oscar Guindaste</button>
+            </div>
+            <button id="verificar" class="botao-principal" type="button">NÃO SOU UM EX-ROBÔ</button><p id="erroCaptcha" class="mensagem-erro" role="status"></p>
+        </section>
+        <section id="cofre" class="arquivo cofre" hidden>
+            <p class="etapa">FASE 3/3 — ARQUIVO CONFIDENCIAL</p><h2>📁 coisas_que_superei</h2>
+            <div class="pastas"><p>└── 📁 definitivamente_superada</p><p>&nbsp;&nbsp;&nbsp;└── 📁 baiana</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 🔒 edits_proibidos.mp4</p></div>
+            <label for="senha">Senha: o destino final depois de toda Derrota</label>
+            <div class="linha-senha"><input id="senha" type="text" autocomplete="off" placeholder="7 letras..."><button id="abrirCofre" type="button">ABRIR</button></div><p id="erroSenha" class="mensagem-erro" role="status"></p>
+        </section>
+        <section id="premio" class="premio" hidden>
+            <div class="certificado"><p>REPÚBLICA FEDERATIVA DO PEDRÃO</p><h2>CERTIFICADO DE<br>CONHECEDOR AUTORIZADO</h2><p>Certificamos que o portador sobreviveu às derrotas e finalmente encontrou a</p><strong>VITÓRIA</strong><small>Assinado digitalmente: PedrAI · cartório não reconhecido</small></div>
+            <h2 class="titulo-edits">RECOMPENSA: EDITS HISTÓRICOS</h2>
+            <div class="videos"><video controls preload="metadata"><source src="assets/edit1.mp4" type="video/mp4">Seu navegador perdeu essa vitória.</video><video controls preload="metadata"><source src="assets/edit2.mp4" type="video/mp4">Seu navegador perdeu essa vitória.</video></div>
+            <button id="reiniciar" class="botao-nao" type="button">APAGAR PRONTUÁRIO (RECOMEÇAR)</button>
+        </section>
+        <a class="voltar" href="index.html">← Fugir da investigação</a>
     </main>
+    <script src="js/site.js"></script>
 </body>
 </html>
