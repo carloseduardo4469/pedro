@@ -3,14 +3,14 @@
  * Mude os textos e a senha aqui. A lógica do site começa mais abaixo.
  */
 const CONFIGURACAO = {
-    senhaDaTerceiraFase: "VITORIA",
+    senhaDaTerceiraFase: "sofiaceciroxo",
     quantidadeDeAvisos: 3,
 
     textos: {
         avisoDoBotao: "EU FALEI PARA NÃO CLICAR.",
         premioDoBotao: "Parabéns. Você desbloqueou absolutamente nada.",
-        erroCaptcha: "Pense como o Pedrão e depois faça exatamente o contrário. Dicas: viagem e ",
-        erroSenha: "Senha errada. Isso foi uma Derrota. Dica: é o oposto dela e tem nome próprio."
+        erroCaptcha: "Pense como o Pedrão e depois faça exatamente o contrário. Dicas: viagem e religião e aquoso ",
+        erroSenha: "Senha errada. Isso foi uma Derrota. Dica: parente, BAIANA, cor (tem q ser td junto)"
     },
 
     // Nomes usados para salvar o progresso no navegador.

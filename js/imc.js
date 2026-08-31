@@ -3,14 +3,14 @@
  * Você pode trocar todas as mensagens sem alterar a lógica abaixo.
  */
 const CONFIGURACAO_IMC = {
-    intervaloEntreMensagens: 500,
-    tempoAteOResultado: 2100,
+    intervaloEntreMensagens: 2000,
+    tempoAteOResultado: 8300,
 
     mensagensDeCarregamento: [
-        "Consultando especialistas sem formação... 12%",
+        "Consultando o Oscar... 12%",
         "Pesando decisões passadas... 38%",
         "Ligando para o guindaste... 74%",
-        "Inventando resultado... 99%"
+        "Resultado gorduroso... 99%"
     ],
 
     mensagemSemDados: "⚠ ERRO: informe números para que possamos ignorá-los corretamente.",
