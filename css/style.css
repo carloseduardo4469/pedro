@@ -238,6 +238,260 @@ a,button{
     text-decoration:underline
 }
 
+.puzzle{
+    padding:clamp(20px,4vw,42px);
+    text-align:center
+}
+
+.hub{padding:clamp(25px,5vw,55px);text-align:center}
+.hub>h2{margin:22px 0 5px;font:clamp(2.8rem,8vw,6rem)/.9 Impact,fantasy}
+.rotas-hub{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:35px}
+.rota-hub{padding:25px 18px;border:9px outset #aaa;transition:transform .2s}
+.rota-hub:hover{transform:translateY(-7px) rotate(-1deg)}
+.rota-desafio{background:#d8b4ff}.rota-investigacao{background:#a9f6ff}
+.icone-rota{display:block;font-size:5rem}.rota-hub h3{margin:12px 0;font:clamp(2rem,5vw,3.5rem) Impact}
+.pergunta-puzzle{display:none}.pergunta-puzzle.ativa{display:block}
+
+.puzzle h2{
+    margin:22px 0 8px;
+    font:clamp(2.3rem,7vw,5rem)/.95 Impact,fantasy
+}
+
+.status-puzzle{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:20px 0
+}
+
+.status-puzzle span{
+    padding:8px 14px;
+    color:#fff;
+    background:#000;
+    border:3px solid var(--verde)
+}
+
+.tabuleiro-memoria{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    max-width:780px;
+    margin:25px auto 0;
+    perspective:1000px
+}
+
+.carta-memoria{
+    position:relative;
+    aspect-ratio:1;
+    padding:0;
+    background:transparent;
+    border:0;
+    transition:transform .25s
+}
+
+.carta-memoria.virada{
+    transform:scale(.96)
+}
+
+.carta-memoria.combinada{
+    transform:scale(1);
+    filter:drop-shadow(0 0 12px var(--verde));
+    pointer-events:none
+}
+
+.carta-memoria.combinada .carta-frente{
+    border:7px solid var(--verde);
+    box-shadow:inset 0 0 12px var(--verde)
+}
+
+.carta-memoria.combinada .carta-frente img{
+    object-fit:cover;
+    opacity:1
+}
+
+.carta-verso,.carta-frente{
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    border:7px outset var(--rosa);
+    transition:opacity .2s,visibility .2s
+}
+
+.carta-verso{
+    color:var(--amarelo);
+    background:repeating-linear-gradient(45deg,#71008f 0 14px,#ff00ae 14px 28px);
+    font:clamp(2.5rem,7vw,5rem) Impact;
+    text-shadow:4px 4px #000
+}
+
+.carta-frente{
+    background:#000;
+    opacity:0;
+    visibility:hidden
+}
+
+.carta-memoria.virada .carta-verso,
+.carta-memoria.combinada .carta-verso{
+    opacity:0;
+    visibility:hidden
+}
+
+.carta-memoria.virada .carta-frente,
+.carta-memoria.combinada .carta-frente{
+    opacity:1;
+    visibility:visible
+}
+
+.carta-frente img{
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+
+.progresso-perguntas{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:18px auto;
+    max-width:700px;
+    font-weight:900
+}
+
+.barra-perguntas{
+    flex:1;
+    height:20px;
+    overflow:hidden;
+    background:#fff;
+    border:4px solid #000
+}
+
+.barra-perguntas span{
+    display:block;
+    width:0;
+    height:100%;
+    background:var(--verde);
+    transition:width .35s
+}
+
+.opcoes-pergunta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    max-width:720px;
+    margin:25px auto
+}
+
+.opcoes-pergunta button{
+    min-height:75px;
+    padding:12px;
+    background:#fff;
+    border:7px outset #aaa;
+    font-size:1.15rem;
+    font-weight:900
+}
+
+.opcoes-pergunta button.errada{
+    color:#fff;
+    background:#d40000;
+    border-color:#ff5a5a
+}
+
+.opcoes-pergunta button.correta{
+    background:var(--verde);
+    border-color:#168500
+}
+
+.retorno-pergunta{
+    min-height:1.5em;
+    color:#9c0000;
+    font-size:1.2rem;
+    font-weight:900
+}
+
+.vitoria-puzzle{
+    padding:clamp(22px,5vw,50px);
+    color:#fff;
+    text-align:center;
+    background:#130017;
+    border:12px ridge var(--verde);
+    box-shadow:15px 15px #000
+}
+
+.vitoria-puzzle h2{
+    margin:15px 0 0;
+    color:var(--verde);
+    font:clamp(4rem,13vw,9rem) Impact;
+    -webkit-text-stroke:2px #000;
+    text-shadow:7px 7px var(--rosa)
+}
+
+.carrossel{
+    position:relative;
+    max-width:780px;
+    margin:28px auto 12px
+}
+
+.trilho-carrossel{
+    position:relative;
+    height:clamp(340px,65vw,600px);
+    overflow:hidden;
+    background:#000;
+    border:10px ridge var(--rosa)
+}
+
+.foto-carrossel{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    opacity:0;
+    transform:scale(.88) rotate(-2deg);
+    transition:opacity .45s,transform .45s
+}
+
+.foto-carrossel.ativa{
+    opacity:1;
+    transform:scale(1) rotate(0)
+}
+
+.controle-carrossel{
+    position:absolute;
+    z-index:3;
+    top:50%;
+    width:58px;
+    height:70px;
+    color:#000;
+    background:var(--amarelo);
+    border:6px outset var(--rosa);
+    font:3rem/1 Impact;
+    transform:translateY(-50%)
+}
+
+.controle-carrossel.anterior{left:-22px}
+.controle-carrossel.proxima{right:-22px}
+
+.indicadores-carrossel{
+    display:flex;
+    justify-content:center;
+    gap:8px
+}
+
+.indicadores-carrossel button{
+    width:17px;
+    height:17px;
+    padding:0;
+    background:#fff;
+    border:2px solid var(--rosa);
+    border-radius:50%
+}
+
+.indicadores-carrossel button.ativo{background:var(--verde)}
+.contador-carrossel{font-weight:900}
+.acoes-vitoria{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+
 footer{
     padding:20px;
     color:#fff;
@@ -401,6 +655,42 @@ footer{
     display:block
 }
 
+.certificado-vitoria{
+    padding:25px;
+    overflow:hidden
+}
+
+.certificado-vitoria strong{
+    position:relative;
+    z-index:2;
+    margin-bottom:15px;
+    pointer-events:none
+}
+
+.fotos-dvd{
+    position:relative;
+    width:100%;
+    height:clamp(420px,65vw,650px);
+    overflow:hidden;
+    background:#08000a;
+    border:8px inset var(--rosa);
+    box-shadow:inset 0 0 35px #00d9ff99
+}
+
+.fotos-dvd img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:clamp(82px,15vw,150px);
+    height:clamp(82px,15vw,150px);
+    object-fit:cover;
+    border:5px solid var(--verde);
+    box-shadow:0 0 14px var(--verde);
+    will-change:transform;
+    user-select:none;
+    pointer-events:none
+}
+
 .titulo-edits{
     margin-top:55px;
     padding:10px;
@@ -443,6 +733,28 @@ footer{
     grid-template-columns:1fr 1fr
 }
 
+.tabuleiro-memoria{
+    gap:7px
+}
+
+.rotas-hub{grid-template-columns:1fr}
+
+.carta-verso,.carta-frente{
+    border-width:4px
+}
+
+.opcoes-pergunta{
+    grid-template-columns:1fr
+}
+
+.controle-carrossel{
+    width:45px;
+    height:58px
+}
+
+.controle-carrossel.anterior{left:-12px}
+.controle-carrossel.proxima{right:-12px}
+
 .videos{
     grid-template-columns:1fr
 }
@@ -453,6 +765,15 @@ footer{
 
 .caixa-torta{
     box-shadow:9px 9px #000
+}
+
+.certificado-vitoria{
+    padding:12px
+}
+
+.fotos-dvd{
+    height:480px;
+    border-width:5px
 }
 
 

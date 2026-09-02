@@ -14,12 +14,12 @@
             <p class="etapa">FASE 2/3 — CAPTCHA EMOCIONAL</p><h2>MARQUE TODAS AS DECISÕES RUINS</h2>
             <p>Selecione os quatro itens suspeitos. Se você for um robô, provavelmente fará escolhas melhores.</p>
             <div class="grade-captcha">
-                <button type="button" data-ruim="true"><span>✝️</span>Mauá</button>
+                <button type="button" data-ruim="false"><span>✝️</span>Mauá</button>
                 <button type="button" data-ruim="true"><img src="assets/71444-monster-energy-drink.png" alt="Escova roxa">Pericardite</button>
                 <button type="button" data-ruim="false"><span>🏆</span>Vitória</button>
                 <button type="button" data-ruim="true"><img src="assets/escova.png" alt="Escova roxa">Escovita</button>
                 <button type="button" data-ruim="true"><img src="assets/unnamed.jpg" alt="Arhur">Arthur</button>
-                <button type="button" data-ruim="false"><img src="assets/oscarguindaste.jpg" alt="Guindaste Oscar">Oscar Guindaste</button>
+                <button type="button" data-ruim="true"><img src="assets/oscarguindaste.jpg" alt="Guindaste Oscar">Oscar Guindaste</button>
             </div>
             <button id="verificar" class="botao-principal" type="button">NÃO SOU UM EX-ROBÔ</button><p id="erroCaptcha" class="mensagem-erro" role="status"></p>
         </section>
@@ -30,7 +30,18 @@
             <div class="linha-senha"><input id="senha" type="text" autocomplete="off" placeholder="13 letras..."><button id="abrirCofre" type="button">ABRIR</button></div><p id="erroSenha" class="mensagem-erro" role="status"></p>
         </section>
         <section id="premio" class="premio" hidden>
-            <div class="certificado"><p>REPÚBLICA FEDERATIVA DO PEDRÃO</p><h2>CERTIFICADO DE<br>CONHECEDOR AUTORIZADO</h2><p>Certificamos que o portador sobreviveu às derrotas e finalmente encontrou a</p><strong>VITÓRIA</strong><small>Assinado digitalmente: PedrAI · cartório não reconhecido</small></div>
+            <div class="certificado certificado-vitoria">
+                <strong>VITÓRIA</strong>
+                <div class="fotos-dvd" aria-label="Fotos da vitória em movimento">
+                    <img src="assets/IMG-20260830-WA0065.jpg" alt="Foto da vitória 1">
+                    <img src="assets/IMG-20260830-WA0077.jpg" alt="Foto da vitória 2">
+                    <img src="assets/IMG-20260831-WA0011.jpg" alt="Foto da vitória 3">
+                    <img src="assets/IMG-20260831-WA0014.jpg" alt="Foto da vitória 4">
+                    <img src="assets/IMG-20260831-WA0015.jpg" alt="Foto da vitória 5">
+                    <img src="assets/IMG-20260831-WA0019.jpg" alt="Foto da vitória 6">
+                    <img src="assets/IMG-20260831-WA0020.jpg" alt="Foto da vitória 7">
+                </div>
+            </div>
             <h2 class="titulo-edits">RECOMPENSA: EDITS HISTÓRICOS</h2>
             <div class="videos"><video controls preload="metadata"><source src="assets/edit1.mp4" type="video/mp4">Seu navegador perdeu essa vitória.</video><video controls preload="metadata"><source src="assets/edit2.mp4" type="video/mp4">Seu navegador perdeu essa vitória.</video></div>
             <button id="reiniciar" class="botao-nao" type="button">APAGAR PRONTUÁRIO (RECOMEÇAR)</button>
